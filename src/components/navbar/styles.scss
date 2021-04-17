@@ -1,0 +1,38 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/global.scss";
+
+.navbar {
+  width: 100%;
+  @include flex(center, center);
+  background-color: #571751;
+  box-shadow: grey 10px 10px 10px;
+}
+
+.nav-wrapper {
+  width: 95%;
+  @include flex(space-between, center);
+  padding: 20px 0;
+  color: white;
+}
+
+.logo-part {
+  @include flex(center, center);
+  gap: 10px;
+}
+
+.logo {
+  font-size: 45px;
+  line-height: 80%;
+}
+
+.logo-pic {
+  img {
+    max-width: 50px;
+    max-height: 50px;
+  }
+}
+
+.nav-links {
+  @include flex(center, center);
+  gap: 25px;
+}
