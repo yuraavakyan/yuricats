@@ -1,43 +1,36 @@
 import "./styles.scss";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import Sidebar from "../sidebar/Sidebar.js";
+import getImages from "../../api/getImages";
+import setAmount from '../../api/setAmount';
 
 const Main = () => {
-  const url = "https://api.thedogapi.com/v1/breeds?attach_breed=2569";
-  const [state, setState] = useState([]);
+  const { res, currentUrl, amount } = useSelector((state) => state);
+
   useEffect(() => {
-    fetch(url, {
-      method: "get",
-      headers: {
-        "x-api-key": "073a146e-f6ac-43d7-a2cc-6e718e3b230d",
-      },
-    }).then((res) => res.json().then((res) => setState(res)));
-  }, []);
+    getImages(currentUrl);
+  }, [currentUrl]);
 
   return (
     <div className="main">
       <Sidebar />
       <div className="main-part">
         <div className="grid-container">
-          <div className="grid-item">
-            <img src={state[0].image.url}></img>
-          </div>
-          <div className="grid-item">
-            <img src={state[1]}></img>
-          </div>
-          <div className="grid-item">
-            <img src={state[3]}></img>
-          </div>
-          <div className="grid-item">
-            <img src={state}></img>
-          </div>
-          <div className="grid-item">
-            <img src={state}></img>
-          </div>
+          {res.map((el) => {
+            return (
+              <div className="grid-item">
+                <img src={el.url}></img>
+              </div>
+            );
+          })}
         </div>
+        <button onClick={(amount) => setAmount}>Show more</button>
       </div>
     </div>
   );
 };
+
+
 
 export default Main;

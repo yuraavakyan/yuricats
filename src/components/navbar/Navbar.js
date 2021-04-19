@@ -8,9 +8,9 @@ const Navbar = () => {
       <div className="nav-wrapper">
         <div className="logo-part">
           <div className="logo-pic">
-            <img src={dogLogo}></img>
+            <img src={dogLogo} alt=""></img>
           </div>
-          <div className="logo">DogPic</div>
+          <div className="logo">Cat'sPic</div>
         </div>
 
         <div className="nav-links">
