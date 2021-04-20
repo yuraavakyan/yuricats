@@ -4,12 +4,13 @@
 .navbar {
   width: 100%;
   @include flex(center, center);
-  background-color: #571751;
-  box-shadow: grey 10px 10px 10px;
+  background: linear-gradient(95.04deg, #0007ab -55.75%, #a325cf 62.03%);
+  position: fixed;
 }
 
 .nav-wrapper {
-  width: 95%;
+  padding: 10px 50px;
+  width: 100%;
   @include flex(space-between, center);
   padding: 20px 0;
   color: white;
@@ -18,6 +19,7 @@
 .logo-part {
   @include flex(center, center);
   gap: 10px;
+  margin-left: 50px;
 }
 
 .logo {
@@ -35,4 +37,46 @@
 .nav-links {
   @include flex(center, center);
   gap: 25px;
+  margin-right: 50px;
+}
+
+.nav-link {
+  @include flex(center, center);
+  gap: 5px;
+}
+
+.breed-select {
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid white;
+  color: white;
+  font-size: 15px;
+}
+
+.switch-holder {
+  width: 40px;
+  height: 15px;
+  background-color: grey;
+  border-radius: 7px;
+  @include flex(flex-start, center)
+}
+
+.inner-circle{
+  width: 25px;
+  height: 25px;
+  background-color: blue;
+  border-radius: 20px;
+}
+@keyframes on{
+  from {
+    justify-content: flex-start;
+  }
+  to{
+    justify-content: flex-end;
+  }
+}
+
+.on{
+animation: on 0s forwards;
 }

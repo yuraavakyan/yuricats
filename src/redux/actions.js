@@ -1,28 +1,29 @@
 import * as actionTypes from "./actionTypes.js";
 
-export const changed = (newUrl) => {
+export const selectCategory = (url, id) => {
   return {
-    type: actionTypes.CHANGE_CATEGORY,
+    type: actionTypes.SELECT_CATEGORY,
     payload: {
-      url: newUrl,
+      url: url,
+      id: id,
     },
   };
 };
 
-export const add = (count) => {
+export const loadMoreImages = (images) => {
   return {
-    type: actionTypes.ADD_PICS,
+    type: actionTypes.LOAD_MORE_IMAGES,
     payload: {
-      count,
+      images,
     },
   };
 };
 
-export const newData = (res) => {
+export const setImages = (images) => {
   return {
-    type: actionTypes.NEW_DATA,
+    type: actionTypes.SET_IMAGES,
     payload: {
-      res,
+      images,
     },
   };
 };
@@ -36,13 +37,17 @@ export const setCategories = (categories) => {
   };
 };
 
-export const setCurrentUrl = (url) => {
+export const resetCategory = () => {
   return {
-    type: actionTypes.SET_CURRENT_URL,
-    payload: {
-      currentUrl: url,
-    },
+    type: actionTypes.RESET_CATEGORY,
   };
 };
 
-
+export const setAnimated = (animated) => {
+  return{
+    type: actionTypes.SET_ANIMATED,
+    payload: {
+      animated,
+    }
+  }
+}

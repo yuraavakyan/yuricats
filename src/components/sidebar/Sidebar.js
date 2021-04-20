@@ -1,23 +1,22 @@
 import "./styles.scss";
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import store from "../../redux/store";
-import * as actions from "../../redux/actions.js";
 import getCategories from "../../api/getCategories.js";
-import setCurrentUrl from "../../api/setCurrentUrl";
+import selectCategory from "../../api/selectCategory";
+import { baseCategories } from "../../api/apiAddresses";
 
 const Sidebar = (props) => {
-  const categories = useSelector((state) => state.categories);
-
   useEffect(() => {
-    getCategories("https://api.thecatapi.com/v1/categories");
+    getCategories(baseCategories);
   }, []);
+
+  const categories = useSelector((state) => state.categories);
   return (
     <sidebar className="side">
       <div className="side-links">
         {categories.map((el) => {
           return (
-            <div className="side-link" onClick={changeUrl} id={el.id}>
+            <div className="side-link" onClick={handleCategory} id={el.id}>
               {el.name}
             </div>
           );
@@ -27,10 +26,13 @@ const Sidebar = (props) => {
   );
 };
 
-const changeUrl = (event) => {
-  const typicalUrl =
-    "https://api.thecatapi.com/v1/images/search?limit=9&category_ids=";
-  setCurrentUrl(typicalUrl, event.target.id);
+const handleCategory = (event) => {
+  selectCategory(event.target.id);
+  const listOfLinks = event.target.parentNode;
+  listOfLinks.childNodes.forEach((el) => {
+    el.classList.remove("active");
+  });
+  event.target.classList.add("active");
 };
 
 export default Sidebar;

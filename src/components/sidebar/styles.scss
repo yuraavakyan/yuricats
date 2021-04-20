@@ -3,13 +3,13 @@
 
 .side {
   @include flex(flex-start, center);
-  margin-top: 30px;
   flex-direction: column;
-  background-color: #571751;
-  padding: 20px;
-  width: 10%;
-  height: 100%;
+  background: linear-gradient(-160deg, #0007ab -75%, #a325cf 62.03%);
+  padding: 50px;
   box-shadow: grey 10px 10px 10px;
+  position: fixed;
+  top: 90px;
+  height: 100%;
 }
 
 .side-links {
@@ -17,4 +17,22 @@
   flex-direction: column;
   gap: 15px;
   color: white;
+  width: 100%;
+}
+
+@keyframes changeColor {
+  0% {
+    color: white;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: white;
+  }
+}
+
+.active {
+  font-size: 30px;
+  animation: changeColor 1s infinite both;
 }

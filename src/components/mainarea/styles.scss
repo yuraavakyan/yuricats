@@ -2,30 +2,46 @@
 @import "../../styles/mixins.scss";
 
 .main {
-  height: 100vh;
-  @include flex(flex-start, center);
+  height: auto;
+  @include flex(flex-start, stretch);
 }
 
 .main-part {
   width: 100%;
+  height: 100%;
   @include flex(center, center);
+  gap: 50px;
   flex-direction: column;
+  margin-top: 50px;
 }
 
 .grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-template-rows: auto;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  width: 89%;
+  column-width: 250px;
+  padding-top: 100px;
+  padding-left: 200px;
+  padding-right: 50px;
 }
 
 .grid-item {
-  background-color: #571751;
+  margin-bottom: 10px;
+  background: linear-gradient(-160deg, #0007ab -75%, #a325cf 62.03%);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: grey 10px 10px 10px;
+
   img {
-    width: 250px;
-    height: 180px;
+    width: 100%;
+    object-fit: cover;
   }
+}
+
+.show-more {
+  margin-bottom: 10px;
+  background: linear-gradient(-160deg, #0007ab -75%, #a325cf 62.03%);
+  box-shadow: grey 10px 10px 10px;
+  color: white;
+  padding: 10px 100px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
 }

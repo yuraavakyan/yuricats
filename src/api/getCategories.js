@@ -5,9 +5,15 @@ import * as actions from "../redux/actions.js";
 async function getCategories(url) {
   const response = await fetch(url);
   const data = await response.json();
-  store.dispatch(actions.setCategories(data));
-}
 
-console.log(store.getState());
+  const capitalized = data.map((el) => {
+    return {
+      name: el.name[0].toUpperCase() + el.name.slice(1),
+      id: el.id,
+    };
+  });
+
+  store.dispatch(actions.setCategories(capitalized));
+}
 
 export default getCategories;

@@ -2,37 +2,46 @@ import * as actionTypes from "./actionTypes.js";
 
 const initialState = {
   categories: [],
-  count: 9,
-  res: [],
+  count: 12,
+  images: [],
 };
 
 function reducer(state = initialState, action) {
   switch (action.type) {
-    case actionTypes.CHANGE_CATEGORY:
+    case actionTypes.SELECT_CATEGORY:
       return {
         ...state,
-        url: action.payload.url,
+        selectedCategory: {
+          url: action.payload.url,
+          id: action.payload.id,
+        },
       };
 
-    case actionTypes.ADD_PICS:
+    case actionTypes.LOAD_MORE_IMAGES:
       return {
         ...state,
-        amount: action.payload.amount,
+        images: [...state.images, ...action.payload.images],
       };
-    case actionTypes.NEW_DATA:
+    case actionTypes.SET_IMAGES:
       return {
         ...state,
-        res: action.payload.res,
+        images: action.payload.images,
       };
     case actionTypes.SET_CATEGORIES:
       return {
         ...state,
         categories: action.payload.categories,
       };
-    case actionTypes.SET_CURRENT_URL:
+
+    case actionTypes.RESET_CATEGORY:
       return {
         ...state,
-        currentUrl: action.payload.currentUrl,
+        selectedCategory: {},
+      };
+    case actionTypes.SET_ANIMATED:
+      return {
+        ...state,
+        animated: action.payload.animated,
       };
 
     default:
