@@ -1,27 +1,27 @@
-import React, { useEffect } from "react";
 import "./styles.scss";
 import catLogo from "../../img/wool-ball.png";
 import resetCategory from "../../api/resetCategory";
-import setAnimated from '../../api/setAnimated';
+import AnimatedButton from "../animatedButton/AnimatedButton";
+import { useSelector } from "react-redux";
+import { setSidebarStatus } from "../../api/setSidebarStatus";
 
 const Navbar = () => {
-  
+  const { sidebarActive } = useSelector((state) => state);
 
   const handleRefresh = () => {
     resetCategory();
   };
 
-  const handleSwitch = (event) => {
-    const element = event.target.parentNode;
-    if (element.classList.contains("on")) {
-      element.classList.remove("on");
-      element.classList.add("off");
-      setAnimated(false);
-    } else {
-      element.classList.remove("off");
-      element.classList.add("on");
-      setAnimated(true);
-    }
+  const handleSideClick = (event) => {
+    const burger =
+      event.target.childNodes.length == 0
+        ? event.target.parentNode
+        : event.target;
+
+    sidebarActive ? setSidebarStatus(false) : setSidebarStatus(true);
+    if (!sidebarActive) {
+      burger.classList.add("open");
+    } else burger.classList.remove("open");
   };
 
   return (
@@ -36,12 +36,13 @@ const Navbar = () => {
 
         <div className="nav-links">
           <div className="nav-link">
-            <div className="switch-holder">
-              <div className="inner-circle off" onClick={handleSwitch}></div>
-            </div>
-            Animated
+            <AnimatedButton class="nav-animated" />
           </div>
-          <div className="nav-link">About</div>
+          <div className="burger" onClick={handleSideClick}>
+            <div className="burger-line1"></div>
+            <div className="burger-line2"></div>
+            <div className="burger-line3"></div>
+          </div>
         </div>
       </div>
     </nav>

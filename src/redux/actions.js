@@ -51,3 +51,22 @@ export const setAnimated = (animated) => {
     }
   }
 }
+
+export const setLoading = (isLoading) => {
+  return {
+    type: actionTypes.SET_LOADING,
+    payload: {
+      isLoading,
+    }
+  }
+}
+
+
+export const sidebarActivated = (status) => {
+  return {
+    type: actionTypes.SIDEBAR_ACTIVE,
+    payload: {
+      status,
+    }
+  }
+}

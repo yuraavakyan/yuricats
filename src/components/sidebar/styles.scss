@@ -5,11 +5,29 @@
   @include flex(flex-start, center);
   flex-direction: column;
   background: linear-gradient(-160deg, #0007ab -75%, #a325cf 62.03%);
-  padding: 50px;
-  box-shadow: grey 10px 10px 10px;
+  padding-top: 50px;
+  box-shadow: rgb(59, 58, 58) 10px 10px 10px;
   position: fixed;
+  left: 0;
   top: 90px;
+  width: 15%;
   height: 100%;
+  transition: left 1s;
+  @include xs{
+    width: 100%;
+    top: 50px;
+    left: -100%;
+    box-shadow: none;
+    
+
+  }
+}
+
+.side-active{
+  
+  @include xs{
+    left: 0;
+  }
 }
 
 .side-links {
@@ -20,19 +38,25 @@
   width: 100%;
 }
 
-@keyframes changeColor {
-  0% {
-    color: white;
-  }
-  50% {
-    color: black;
-  }
-  100% {
-    color: white;
-  }
+.side-link {
+  cursor: pointer;
+}
+
+.side-link:hover {
+  color: #ff8fb8;
 }
 
 .active {
   font-size: 30px;
-  animation: changeColor 1s infinite both;
+  color: #ff8fb8;
+}
+
+.side-animated {
+  display: none;
+  @include xs {
+    margin-top: 100px;
+    @include flex(center, center);
+    flex-direction: column;
+    color: white;
+  }
 }

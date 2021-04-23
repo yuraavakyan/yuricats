@@ -5,4 +5,6 @@ export const SET_CATEGORIES = "setCategories";
 export const SET_CURRENT_CATEGORY = 'currentCategorySet';
 export const RESET_CATEGORY = 'resetCategories';
 export const SET_ANIMATED = 'setAnimated';
+export const SET_LOADING = 'setLoading';
+export const SIDEBAR_ACTIVE = 'sidebarActivated';
 

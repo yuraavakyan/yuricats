@@ -3,45 +3,32 @@
 
 .main {
   height: auto;
-  @include flex(flex-start, stretch);
+  @include flex(center, stretch);
 }
 
-.main-part {
-  width: 100%;
-  height: 100%;
+.content-wrapper {
   @include flex(center, center);
-  gap: 50px;
-  flex-direction: column;
-  margin-top: 50px;
 }
 
-.grid-container {
-  column-width: 250px;
-  padding-top: 100px;
-  padding-left: 200px;
-  padding-right: 50px;
-}
-
-.grid-item {
-  margin-bottom: 10px;
-  background: linear-gradient(-160deg, #0007ab -75%, #a325cf 62.03%);
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: grey 10px 10px 10px;
-
-  img {
-    width: 100%;
-    object-fit: cover;
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 
-.show-more {
-  margin-bottom: 10px;
-  background: linear-gradient(-160deg, #0007ab -75%, #a325cf 62.03%);
-  box-shadow: grey 10px 10px 10px;
-  color: white;
-  padding: 10px 100px;
-  border-radius: 10px;
-  outline: none;
-  border: none;
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation: rotate 0.2s infinite;
+
+  img {
+    max-height: 100px;
+    @include xs{
+      max-height: 30px;
+    }
+  }
 }

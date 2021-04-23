@@ -1,0 +1,48 @@
+@import "../../styles/global.scss";
+@import "../../styles/mixins.scss";
+
+.animated{
+    margin-top: 100px;
+    color: white;
+    @include flex(center, center);
+    flex-direction: column;
+}
+
+.switch-holder {
+  width: 40px;
+  height: 15px;
+  background-color: grey;
+  border-radius: 7px;
+  @include flex(flex-start, center);
+}
+
+.inner-circle {
+  width: 25px;
+  height: 25px;
+  background-color: #ff8fb8;
+  border-radius: 20px;
+}
+@keyframes on {
+  from {
+    justify-content: flex-start;
+  }
+  to {
+    justify-content: flex-end;
+  }
+}
+
+@keyframes changeColor {
+  from {
+    background-color: #ff8fb8;
+  }
+  to {
+    background-color: blue;
+  }
+}
+
+.on {
+  animation: on 0s forwards;
+  div {
+    animation: changeColor 0.2s forwards;
+  }
+}

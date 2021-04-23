@@ -4,6 +4,11 @@ const initialState = {
   categories: [],
   count: 12,
   images: [],
+  isLoading: true,
+  mobile: null,
+  animated: false,
+  sidebarActive: false,
+
 };
 
 function reducer(state = initialState, action) {
@@ -36,7 +41,7 @@ function reducer(state = initialState, action) {
     case actionTypes.RESET_CATEGORY:
       return {
         ...state,
-        selectedCategory: {},
+        selectedCategory: undefined,
       };
     case actionTypes.SET_ANIMATED:
       return {
@@ -44,6 +49,17 @@ function reducer(state = initialState, action) {
         animated: action.payload.animated,
       };
 
+    case actionTypes.SET_LOADING:
+      return {
+        ...state,
+        isLoading: action.payload.isLoading,
+      }
+
+    case actionTypes.SIDEBAR_ACTIVE:
+      return {
+        ...state,
+        sidebarActive: action.payload.status,
+      }
     default:
       return state;
   }

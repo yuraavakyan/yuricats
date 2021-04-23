@@ -3,3 +3,21 @@
   justify-content: $just;
   align-items: $align;
 }
+
+@mixin xs{
+  @media (max-width: 574px) {
+    @content;
+  }
+}
+
+@mixin s{
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin m {
+  @media (max-width: 1080px){
+    @content;
+  }
+}
