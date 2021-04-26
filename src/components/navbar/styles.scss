@@ -5,7 +5,8 @@
   width: 100%;
   @include flex(center, center);
   background: linear-gradient(95.04deg, #0007ab -55.75%, #a325cf 62.03%);
-  position: fixed;
+  position: sticky;
+  top: 0;
   z-index: 5;
 }
 
@@ -30,8 +31,9 @@
 .logo {
   font-size: 45px;
   line-height: 80%;
+  font-family: "Dancing Script", cursive;
   @include xs {
-    display: none;
+    font-size: 30px;
   }
 }
 
@@ -61,6 +63,7 @@
 .nav-animated {
   @include flex(center, center);
   color: white;
+  gap: 5px;
   @include xs {
     display: none;
   }
@@ -86,7 +89,6 @@
   height: 3px;
   background-color: #ff8ff8;
 }
-
 
 .open {
   .burger-line2 {

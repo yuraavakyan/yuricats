@@ -27,8 +27,12 @@
 
   img {
     max-height: 100px;
-    @include xs{
+    @include xs {
       max-height: 30px;
     }
   }
+}
+
+.none {
+  display: none;
 }

@@ -6,14 +6,7 @@ async function getCategories(url) {
   const response = await fetch(url);
   const data = await response.json();
 
-  const capitalized = data.map((el) => {
-    return {
-      name: el.name[0].toUpperCase() + el.name.slice(1),
-      id: el.id,
-    };
-  });
-
-  store.dispatch(actions.setCategories(capitalized));
+  store.dispatch(actions.setCategories(data));
 }
 
 export default getCategories;

@@ -8,7 +8,8 @@ const initialState = {
   mobile: null,
   animated: false,
   sidebarActive: false,
-
+  selectedCategory: null,
+  firstLoad: true,
 };
 
 function reducer(state = initialState, action) {
@@ -41,7 +42,9 @@ function reducer(state = initialState, action) {
     case actionTypes.RESET_CATEGORY:
       return {
         ...state,
-        selectedCategory: undefined,
+        selectedCategory: {
+          id: 0,
+        },
       };
     case actionTypes.SET_ANIMATED:
       return {
@@ -53,13 +56,19 @@ function reducer(state = initialState, action) {
       return {
         ...state,
         isLoading: action.payload.isLoading,
-      }
+      };
 
     case actionTypes.SIDEBAR_ACTIVE:
       return {
         ...state,
         sidebarActive: action.payload.status,
-      }
+      };
+
+    case actionTypes.SET_FIRST_LOAD:
+      return {
+        ...state,
+        firstLoad: false,
+      };
     default:
       return state;
   }

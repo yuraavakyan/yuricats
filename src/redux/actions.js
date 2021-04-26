@@ -70,3 +70,9 @@ export const sidebarActivated = (status) => {
     }
   }
 }
+
+export const setFirstLoad = () => {
+  return {
+    type: actionTypes.SET_FIRST_LOAD,
+  }
+}

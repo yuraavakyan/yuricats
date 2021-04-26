@@ -13,19 +13,16 @@
   width: 15%;
   height: 100%;
   transition: left 1s;
-  @include xs{
+  @include xs {
     width: 100%;
     top: 50px;
     left: -100%;
     box-shadow: none;
-    
-
   }
 }
 
-.side-active{
-  
-  @include xs{
+.side-active {
+  @include xs {
     left: 0;
   }
 }
@@ -36,10 +33,17 @@
   gap: 15px;
   color: white;
   width: 100%;
+  font-size: 25px;
+  @include m {
+    font-size: 20px;
+    gap: 20px;
+  }
 }
 
 .side-link {
+  text-transform: capitalize;
   cursor: pointer;
+  transition: margin 0.5s;
 }
 
 .side-link:hover {
@@ -49,6 +53,7 @@
 .active {
   font-size: 30px;
   color: #ff8fb8;
+  margin-left: 15px;
 }
 
 .side-animated {

@@ -7,4 +7,4 @@ export const RESET_CATEGORY = 'resetCategories';
 export const SET_ANIMATED = 'setAnimated';
 export const SET_LOADING = 'setLoading';
 export const SIDEBAR_ACTIVE = 'sidebarActivated';
-
+export const SET_FIRST_LOAD = 'setFirstLoad';
