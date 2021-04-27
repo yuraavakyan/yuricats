@@ -4,8 +4,6 @@ const initialState = {
   categories: [],
   count: 12,
   images: [],
-  isLoading: true,
-  mobile: null,
   animated: false,
   sidebarActive: false,
   selectedCategory: null,
@@ -18,7 +16,6 @@ function reducer(state = initialState, action) {
       return {
         ...state,
         selectedCategory: {
-          url: action.payload.url,
           id: action.payload.id,
         },
       };
@@ -42,22 +39,13 @@ function reducer(state = initialState, action) {
     case actionTypes.RESET_CATEGORY:
       return {
         ...state,
-        selectedCategory: {
-          id: 0,
-        },
+        selectedCategory: null,
       };
     case actionTypes.SET_ANIMATED:
       return {
         ...state,
         animated: action.payload.animated,
       };
-
-    case actionTypes.SET_LOADING:
-      return {
-        ...state,
-        isLoading: action.payload.isLoading,
-      };
-
     case actionTypes.SIDEBAR_ACTIVE:
       return {
         ...state,

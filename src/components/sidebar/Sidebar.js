@@ -1,9 +1,7 @@
-import "./styles.scss";
+import "./sidebar.scss";
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import getCategories from "../../api/getCategories.js";
-import selectCategory from "../../api/selectCategory";
-import { baseCategories } from "../../api/apiAddresses";
+import { getCategories, selectCategory } from "../../api/getCategories.js";
 import AnimatedButton from "../animatedButton/AnimatedButton";
 import { setSidebarStatus } from "../../api/setSidebarStatus";
 
@@ -11,8 +9,7 @@ const Sidebar = (props) => {
   const { categories, selectedCategory } = useSelector((state) => state);
 
   useEffect(() => {
-    getCategories(baseCategories);
-    selectCategory(0);
+    getCategories();
   }, []);
 
   const handleCategoryClick = (id) => {
@@ -26,7 +23,7 @@ const Sidebar = (props) => {
         {categories.map((el) => (
           <div
             className={`side-link ${
-              selectedCategory.id === el.id ? "active" : ""
+              selectedCategory?.id === el.id ? "active" : ""
             }`}
             onClick={() => handleCategoryClick(el.id)}
             key={el.id}

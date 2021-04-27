@@ -5,19 +5,15 @@
   @include flex(flex-start, center);
   flex-direction: column;
   background: linear-gradient(-160deg, #0007ab -75%, #a325cf 62.03%);
-  padding-top: 50px;
-  box-shadow: rgb(59, 58, 58) 10px 10px 10px;
-  position: fixed;
-  left: 0;
-  top: 90px;
-  width: 15%;
-  height: 100%;
+  min-width: 200px;
   transition: left 1s;
+  height: auto;
+  min-height: 100vh;
   @include xs {
+    position: absolute;
     width: 100%;
     top: 50px;
     left: -100%;
-    box-shadow: none;
   }
 }
 
@@ -34,6 +30,9 @@
   color: white;
   width: 100%;
   font-size: 25px;
+  position: sticky;
+  top: 94px;
+  padding-top: 50px;
   @include m {
     font-size: 20px;
     gap: 20px;

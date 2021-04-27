@@ -1,6 +1,6 @@
 import React from "react";
 import { setFirstLoad } from "../../api/setFirstLoad";
-import "./styles.scss";
+import "./welcome.scss";
 import logo from "../../img/wool-ball.png";
 
 const Welcome = (props) => {

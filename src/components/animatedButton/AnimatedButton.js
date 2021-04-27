@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import setAnimated from "../../api/setAnimated";
+import { setAnimated } from "../../api/getImages";
 import { setSidebarStatus } from "../../api/setSidebarStatus";
-import "./styles.scss";
+import "./animated.scss";
 
 const AnimatedButton = (props) => {
   const { animated } = useSelector((state) => state);

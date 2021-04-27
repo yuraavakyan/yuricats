@@ -5,13 +5,13 @@
   width: 90%;
   height: 100%;
   @include flex(center, center);
-  gap: 50px;
   flex-direction: column;
+  padding: 20px;
 }
 
 .grid-container {
-  column-count: 4;
-  padding: 30px 30px 30px 170px;
+  column-width: 200px;
+  padding: 30px;
   white-space: nowrap;
   vertical-align: inherit;
   display: inline-block;
@@ -23,7 +23,6 @@
 
 .grid-item {
   margin-bottom: 10px;
-
   img {
     width: 100%;
     object-fit: cover;
@@ -36,9 +35,7 @@
 }
 
 .show-more {
-  margin-bottom: 10px;
   background: linear-gradient(-160deg, #0007ab -75%, #a325cf 62.03%);
-  box-shadow: grey 10px 10px 10px;
   color: white;
   padding: 10px 100px;
   border-radius: 10px;

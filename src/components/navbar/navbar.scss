@@ -73,37 +73,48 @@
   display: none;
   @include xs {
     position: relative;
-
-    @include flex(space-around, center);
+    @include flex(center, center);
     flex-direction: column;
     width: 30px;
     height: 24px;
   }
 }
 
-.burger-line1,
-.burger-line2,
-.burger-line3 {
-  transition: transform 1s;
-  width: 100%;
+.burger-line {
+  transition: all 1s;
+  width: 30px;
   height: 3px;
   background-color: #ff8ff8;
 }
 
-.open {
-  .burger-line2 {
-    transform: scale(0);
-  }
-  .burger-line1 {
-    transform: rotate(45deg);
-    position: absolute;
+.burger-line::before,
+.burger-line::after {
+  content: "";
+  position: absolute;
+  transition: all 1s;
+  width: 30px;
+  height: 3px;
+  background-color: #ff8ff8;
+}
 
-    width: 100%;
+.burger-line::before {
+  transform: translateY(8px);
+}
+
+.burger-line::after {
+  transform: translateY(-8px);
+}
+
+.burger.open {
+  .burger-line {
+    transform: translateX(-30px);
+    background: transparent;
   }
-  .burger-line3 {
-    position: absolute;
-    transform: rotate(-45deg);
-    position: absolute;
-    width: 100%;
+  .burger-line::before {
+    transform: rotate(45deg) translate(25px, -25px);
+  }
+
+  .burger-line::after {
+    transform: rotate(-45deg) translate(25px, 25px);
   }
 }

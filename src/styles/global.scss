@@ -1,5 +1,6 @@
 * {
   font-family: "Noto Sans SC", sans-serif;
+  box-sizing: border-box;
 }
 
 h1,
@@ -15,4 +16,9 @@ button {
   outline: none;
   border: none;
   cursor: pointer;
+}
+
+body {
+  height: 100%;
+  width: 100%;
 }

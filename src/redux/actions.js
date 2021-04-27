@@ -1,10 +1,9 @@
 import * as actionTypes from "./actionTypes.js";
 
-export const selectCategory = (url, id) => {
+export const selectCategory = (id) => {
   return {
     type: actionTypes.SELECT_CATEGORY,
     payload: {
-      url: url,
       id: id,
     },
   };
@@ -44,35 +43,25 @@ export const resetCategory = () => {
 };
 
 export const setAnimated = (animated) => {
-  return{
+  return {
     type: actionTypes.SET_ANIMATED,
     payload: {
       animated,
-    }
-  }
-}
-
-export const setLoading = (isLoading) => {
-  return {
-    type: actionTypes.SET_LOADING,
-    payload: {
-      isLoading,
-    }
-  }
-}
-
+    },
+  };
+};
 
 export const sidebarActivated = (status) => {
   return {
     type: actionTypes.SIDEBAR_ACTIVE,
     payload: {
       status,
-    }
-  }
-}
+    },
+  };
+};
 
 export const setFirstLoad = () => {
   return {
     type: actionTypes.SET_FIRST_LOAD,
-  }
-}
+  };
+};

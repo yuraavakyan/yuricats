@@ -1,0 +1,16 @@
+@import "../../styles/global.scss";
+@import "../../styles/mixins.scss";
+
+.main {
+  height: 100%;
+  @include flex(center, stretch);
+}
+
+.side-div {
+  @include flex(center, center);
+  width: 100%;
+}
+
+.none {
+  display: none;
+}

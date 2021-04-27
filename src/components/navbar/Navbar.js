@@ -1,6 +1,6 @@
-import "./styles.scss";
+import "./navbar.scss";
 import catLogo from "../../img/wool-ball.png";
-import resetCategory from "../../api/resetCategory";
+import { resetCategory } from "../../api/getCategories";
 import AnimatedButton from "../animatedButton/AnimatedButton";
 import { useSelector } from "react-redux";
 import { setSidebarStatus } from "../../api/setSidebarStatus";
@@ -26,25 +26,24 @@ const Navbar = () => {
           </div>
           <div className="logo">CatPics</div>
         </div>
-
-        <div className="nav-links">
-          <div
-            className="nav-link"
-            style={{ display: firstLoad ? "none" : "" }}
-          >
+        {firstLoad ? 
+          ""
+         : 
+          <div className="nav-links">
             <AnimatedButton class="nav-animated" />
+            <div
+              style={{ display: firstLoad ? "none" : "" }}
+              className={`burger ${sidebarActive ? "open" : ""}`}
+              onClick={handleSideClick}
+            >
+              <div className="burger-line"></div>
+            </div>
           </div>
-          <div
-            style={{ display: firstLoad ? "none" : "" }}
-            className={`burger ${sidebarActive ? "open" : ""}`}
-            onClick={handleSideClick}
-          >
-            <div className="burger-line1"></div>
-            <div className="burger-line2"></div>
-            <div className="burger-line3"></div>
-          </div>
+          
+        }
+        
         </div>
-      </div>
+      
     </nav>
   );
 };
