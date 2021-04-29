@@ -1,9 +1,15 @@
 import "./sidebar.scss";
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { getCategories, selectCategory } from "../../api/getCategories.js";
-import AnimatedButton from "../animatedButton/AnimatedButton";
+import {
+  getCategories,
+  resetCategory,
+  selectCategory,
+} from "../../api/Categories.js";
+import AnimatedButton from "../navbar/components/animatedButton/AnimatedButton";
 import { setSidebarStatus } from "../../api/setSidebarStatus";
+import { setPage } from "../../api/Images";
+import SelectAmount from "../settings/components/display/SelectAmount";
 
 const Sidebar = (props) => {
   const { categories, selectedCategory } = useSelector((state) => state);
@@ -13,12 +19,14 @@ const Sidebar = (props) => {
   }, []);
 
   const handleCategoryClick = (id) => {
+    resetCategory();
     selectCategory(id);
     setSidebarStatus(false);
+    setPage(1);
   };
 
   return (
-    <sidebar className={`side ${props.class}`}>
+    <aside className={`side ${props.class}`}>
       <div className="side-links">
         {categories.map((el) => (
           <div
@@ -31,9 +39,10 @@ const Sidebar = (props) => {
             {el.name}
           </div>
         ))}
+        <AnimatedButton class="side-animated" />
+        <SelectAmount class="select-side" />
       </div>
-      <AnimatedButton class="side-animated" />
-    </sidebar>
+    </aside>
   );
 };
 

@@ -4,7 +4,7 @@
 .navbar {
   width: 100%;
   @include flex(center, center);
-  background: linear-gradient(95.04deg, #0007ab -55.75%, #a325cf 62.03%);
+  background: linear-gradient(90deg, #0007ab -55%, #a325cf 62%);
   position: sticky;
   top: 0;
   z-index: 5;
@@ -116,5 +116,11 @@
 
   .burger-line::after {
     transform: rotate(-45deg) translate(25px, 25px);
+  }
+}
+
+.settings-nav {
+  @include s {
+    display: none;
   }
 }

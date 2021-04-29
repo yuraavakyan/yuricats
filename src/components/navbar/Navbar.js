@@ -1,9 +1,10 @@
 import "./navbar.scss";
 import catLogo from "../../img/wool-ball.png";
-import { resetCategory } from "../../api/getCategories";
-import AnimatedButton from "../animatedButton/AnimatedButton";
+import { resetCategory } from "../../api/Categories";
+import AnimatedButton from './components/animatedButton/AnimatedButton';
 import { useSelector } from "react-redux";
 import { setSidebarStatus } from "../../api/setSidebarStatus";
+import Settings from "../settings/Settings";
 
 const Navbar = () => {
   const { sidebarActive, firstLoad } = useSelector((state) => state);
@@ -24,12 +25,14 @@ const Navbar = () => {
           <div className="logo-pic">
             <img src={catLogo} alt=""></img>
           </div>
+
           <div className="logo">CatPics</div>
         </div>
-        {firstLoad ? 
+        {firstLoad ? (
           ""
-         : 
+        ) : (
           <div className="nav-links">
+            <Settings class="settings-nav" />
             <AnimatedButton class="nav-animated" />
             <div
               style={{ display: firstLoad ? "none" : "" }}
@@ -39,11 +42,8 @@ const Navbar = () => {
               <div className="burger-line"></div>
             </div>
           </div>
-          
-        }
-        
-        </div>
-      
+        )}
+      </div>
     </nav>
   );
 };

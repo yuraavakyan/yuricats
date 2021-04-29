@@ -4,7 +4,7 @@
 .side {
   @include flex(flex-start, center);
   flex-direction: column;
-  background: linear-gradient(-160deg, #0007ab -75%, #a325cf 62.03%);
+  background: linear-gradient(90deg, #0007ab -55%, #a325cf 122%);
   min-width: 200px;
   transition: left 1s;
   height: auto;
@@ -20,6 +20,8 @@
 .side-active {
   @include xs {
     left: 0;
+    position: fixed;
+    z-index: 15;
   }
 }
 
@@ -36,6 +38,11 @@
   @include m {
     font-size: 20px;
     gap: 20px;
+  }
+  @include xs {
+    font-size: 15px;
+    padding: 0;
+    position: fixed;
   }
 }
 
@@ -58,7 +65,6 @@
 .side-animated {
   display: none;
   @include xs {
-    margin-top: 100px;
     @include flex(center, center);
     flex-direction: column;
     color: white;

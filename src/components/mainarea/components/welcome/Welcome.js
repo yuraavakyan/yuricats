@@ -1,7 +1,7 @@
 import React from "react";
-import { setFirstLoad } from "../../api/setFirstLoad";
+import { setFirstLoad } from "../../../../api/setFirstLoad";
 import "./welcome.scss";
-import logo from "../../img/wool-ball.png";
+import logo from "../../../../img/wool-ball.png";
 
 const Welcome = (props) => {
   const getStarted = () => {

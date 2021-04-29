@@ -1,5 +1,5 @@
-@import "../../styles/global.scss";
-@import "../../styles/mixins.scss";
+@import "../../../../styles/global.scss";
+@import "../../../../styles/mixins.scss";
 
 .images-container {
   width: 90%;
@@ -7,6 +7,10 @@
   @include flex(center, center);
   flex-direction: column;
   padding: 20px;
+}
+
+.noscroll {
+  position: fixed;
 }
 
 .grid-container {
@@ -21,9 +25,19 @@
   }
 }
 
+.single {
+  column-width: 700px;
+  .grid-item {
+    img:hover {
+      transform: scale(1);
+    }
+  }
+}
+
 .grid-item {
   margin-bottom: 10px;
   img {
+    border-radius: 5px;
     width: 100%;
     object-fit: cover;
     transition: transform 0.3s;

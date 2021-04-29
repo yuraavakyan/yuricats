@@ -6,3 +6,6 @@ export const RESET_CATEGORY = 'resetCategories';
 export const SET_ANIMATED = 'setAnimated';
 export const SIDEBAR_ACTIVE = 'sidebarActivated';
 export const SET_FIRST_LOAD = 'setFirstLoad';
+export const VIEW_CHANGED = 'viewChanged';
+export const AMOUNT_CHANGED = 'amountChanged';
+export const PAGE_CHANGED = 'pageChanged';

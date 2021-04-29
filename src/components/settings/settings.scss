@@ -1,0 +1,45 @@
+@import "../../styles/mixins.scss";
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.settings-logo {
+  animation: rotate 10s linear infinite;
+}
+
+.settings-nav {
+  @include flex(center, center);
+  cursor: pointer;
+  line-height: 0;
+  .settings-logo {
+    margin-right: 5px;
+  }
+  @include s {
+    display: none;
+  }
+}
+
+.close-settings {
+  img {
+    width: 15px;
+  }
+}
+
+.settings-open.settings-nav {
+  @include flex(center, center);
+  cursor: pointer;
+  .view {
+    margin-right: 10px;
+  }
+  @include xs {
+    flex-direction: column;
+    min-height: 150px;
+    justify-content: space-around;
+  }
+}

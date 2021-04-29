@@ -1,8 +1,8 @@
-@import "../../styles/global.scss";
-@import "../../styles/mixins.scss";
+@import "../../../../styles/global.scss";
+@import "../../../../styles/mixins.scss";
 
 .animated {
-  margin-top: 100px;
+  margin-top: 50px;
   color: white;
   @include flex(center, center);
   flex-direction: column;

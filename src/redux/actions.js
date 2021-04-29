@@ -65,3 +65,30 @@ export const setFirstLoad = () => {
     type: actionTypes.SET_FIRST_LOAD,
   };
 };
+
+export const viewChanged = (gridView) => {
+  return {
+    type: actionTypes.VIEW_CHANGED,
+    payload: {
+      gridView,
+    },
+  }
+}
+
+export const amountChanged = (amount)  => {
+  return {
+    type: actionTypes.AMOUNT_CHANGED,
+    payload: {
+      amount,
+    }
+  }
+}
+
+export const pageChanged = (page) => {
+  return {
+    type: actionTypes.PAGE_CHANGED,
+    payload: {
+      page,
+    }
+  }
+}

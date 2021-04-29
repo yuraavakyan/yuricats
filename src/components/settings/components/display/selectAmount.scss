@@ -1,0 +1,26 @@
+@import "../../../../styles/mixins.scss";
+
+.select {
+  line-height: 0;
+  margin-left: 5px;
+  @include flex(center, center);
+  input {
+    background: transparent;
+    width: 20px;
+    color: white;
+    border: none;
+    border-bottom: 1px solid white;
+    -webkit-appearance: none;
+  }
+}
+
+.select-side {
+  display: none;
+  @include xs {
+    display: flex;
+  }
+}
+
+.display-title {
+  margin-right: 10px;
+}

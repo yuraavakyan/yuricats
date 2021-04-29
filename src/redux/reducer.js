@@ -2,12 +2,14 @@ import * as actionTypes from "./actionTypes.js";
 
 const initialState = {
   categories: [],
-  count: 12,
+  count: 9,
   images: [],
   animated: false,
   sidebarActive: false,
   selectedCategory: null,
   firstLoad: true,
+  gridView: true,
+  page: 1,
 };
 
 function reducer(state = initialState, action) {
@@ -56,6 +58,24 @@ function reducer(state = initialState, action) {
       return {
         ...state,
         firstLoad: false,
+      };
+
+    case actionTypes.VIEW_CHANGED:
+      return {
+        ...state,
+        gridView: action.payload.gridView,
+      };
+
+    case actionTypes.AMOUNT_CHANGED:
+      return {
+        ...state,
+        count: action.payload.amount,
+      };
+
+    case actionTypes.PAGE_CHANGED:
+      return {
+        ...state,
+        page: action.payload.page,
       };
     default:
       return state;
