@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./images.scss";
 import { useSelector } from "react-redux";
-import { getImages, fetchMore } from "../../../../api/Images";
+import { getImages, fetchMore } from "../../../../storeModifyingFunctions/Images";
 
 const Images = () => {
   const {

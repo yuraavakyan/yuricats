@@ -1,9 +1,9 @@
 import "./navbar.scss";
 import catLogo from "../../img/wool-ball.png";
-import { resetCategory } from "../../api/Categories";
+import { resetCategory } from "../../storeModifyingFunctions/Categories";
 import AnimatedButton from './components/animatedButton/AnimatedButton';
 import { useSelector } from "react-redux";
-import { setSidebarStatus } from "../../api/setSidebarStatus";
+import { setSidebarStatus } from "../../storeModifyingFunctions/setSidebarStatus";
 import Settings from "../settings/Settings";
 
 const Navbar = () => {

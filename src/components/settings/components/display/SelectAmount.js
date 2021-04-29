@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import { setAmount } from "../../../../api/setAmount";
-import { setSidebarStatus } from "../../../../api/setSidebarStatus";
+import React from "react";
+import { setAmount } from "../../../../storeModifyingFunctions/Images";
+import { setSidebarStatus } from "../../../../storeModifyingFunctions/setSidebarStatus";
 import "./selectAmount.scss";
 
 function SelectAmount(props) {

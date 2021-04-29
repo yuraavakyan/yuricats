@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { setAnimated } from "../../../../api/Images";
-import { setSidebarStatus } from "../../../../api/setSidebarStatus";
+import { setAnimated } from "../../../../storeModifyingFunctions/Images";
+import { setSidebarStatus } from "../../../../storeModifyingFunctions/setSidebarStatus";
 import "./animated.scss";
 
 const AnimatedButton = (props) => {

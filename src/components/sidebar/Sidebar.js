@@ -5,10 +5,10 @@ import {
   getCategories,
   resetCategory,
   selectCategory,
-} from "../../api/Categories.js";
+} from "../../storeModifyingFunctions/Categories.js";
 import AnimatedButton from "../navbar/components/animatedButton/AnimatedButton";
-import { setSidebarStatus } from "../../api/setSidebarStatus";
-import { setPage } from "../../api/Images";
+import { setSidebarStatus } from "../../storeModifyingFunctions/setSidebarStatus";
+import { setPage } from "../../storeModifyingFunctions/Images";
 import SelectAmount from "../settings/components/display/SelectAmount";
 
 const Sidebar = (props) => {

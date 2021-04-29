@@ -10,7 +10,7 @@ function Settings(props) {
   return open ? (
     <div className={`settings-open ${props.class}`}>
       <div className="close-settings" onClick={() => setOpen(false)}>
-        <img src={close}></img>
+        <img src={close} alt="close-settings"></img>
       </div>
       <View />
       <SelectAmount />
@@ -18,7 +18,7 @@ function Settings(props) {
   ) : (
     <div className={`settings ${props.class}`} onClick={() => setOpen(true)}>
       <div className="settings-logo">
-        <img src={settingsLogo}></img>
+        <img src={settingsLogo} alt="settings-logo"></img>
       </div>
       Settings
     </div>

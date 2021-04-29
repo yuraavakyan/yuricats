@@ -10,7 +10,6 @@ export async function getImages(count, category_id, animated) {
     : `${base}limit=${count}&category_ids=${category_id}&mime_types=${
         animated ? "gif" : "jpg,png"
       }&page=1&order=ASC`;
-  console.log(url);
   const response = await fetch(url);
   const images = await response.json();
 
@@ -27,7 +26,6 @@ export async function fetchMore(count, category_id, animated, page) {
       }&page=${page + 1}&order=ASC`;
   const response = await fetch(url);
   const images = await response.json();
-  console.log(url);
 
   store.dispatch(actions.loadMoreImages(images));
   store.dispatch(actions.pageChanged(page + 1));
@@ -40,3 +38,12 @@ export function setAnimated(animated) {
 export function setPage(page) {
   store.dispatch(actions.pageChanged(page));
 }
+
+export const setAmount = (amount) => {
+  store.dispatch(actions.amountChanged(amount));
+};
+
+export const setView = (view) => {
+  store.dispatch(actions.viewChanged(view));
+};
+

@@ -1,5 +1,5 @@
 import React from "react";
-import { setFirstLoad } from "../../../../api/setFirstLoad";
+import { setFirstLoad } from "../../../../storeModifyingFunctions/setFirstLoad";
 import "./welcome.scss";
 import logo from "../../../../img/wool-ball.png";
 
